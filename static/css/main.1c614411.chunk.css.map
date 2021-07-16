@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,gBAGE,SAAU,CACV,QAAS,CACT,WACF,CAEA,MACE,wBACF","file":"main.1c614411.chunk.css","sourcesContent":["html,\r\nbody,\r\n#root {\r\n  padding: 0;\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n\r\n#root {\r\n  background-color: #dad6cb;\r\n}\r\n"]}
