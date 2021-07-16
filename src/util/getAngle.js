@@ -1,6 +1,6 @@
 export default function getAngle(time, type) {
   const [HOUR, MINUTE, SECOND] = [0, 1, 2];
-  const { hour, minute, second, millisecond } = time;
+  const { hour, minute, second } = time;
   /**
    * 1시간: 360/12 = 30도
    * 1분:  30/
