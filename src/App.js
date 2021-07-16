@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Container from "./components/Container";
+import Frame from "./components/Frame";
+import NiddleHour from "./components/NiddleHour";
+import NiddleMinute from "./components/NiddleMinute";
+import NiddleSecond from "./components/NiddleSecond";
+import useClock from "./hooks/useClock";
+import { getAngle } from "./util";
+const TYPE = { HOUR: 0, MINUTE: 1, SECOND: 2 };
 function App() {
+  const [myTime] = useClock();
+  const [angle] = useState({
+    hour: getAngle(myTime, TYPE.HOUR),
+    minute: getAngle(myTime, TYPE.MINUTE),
+    second: getAngle(myTime, TYPE.SECOND),
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Frame>
+        <NiddleHour angle={angle.hour} />
+        <NiddleMinute angle={angle.minute} />
+        <NiddleSecond angle={angle.second} />
+      </Frame>
+    </Container>
   );
 }
-
 export default App;
